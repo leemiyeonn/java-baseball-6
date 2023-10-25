@@ -2,7 +2,7 @@ package baseball.controller;
 
 import static baseball.utils.NumberUtils.getDigits;
 import static baseball.utils.Validator.validateEndInput;
-import static baseball.utils.Validator.validateInput;
+import static baseball.utils.Validator.validateNumberInput;
 
 import baseball.entity.GameResult;
 import baseball.enums.MessageType;
@@ -58,15 +58,15 @@ public class BaseballController {
         return false;
     }
 
-    public List<Integer> getPlayerNumberInput() {
+    private List<Integer> getPlayerNumberInput() {
         baseballView.displayMessage(MessageType.ASK_FOR_NUMBER);
         String input = baseballView.readInput();
-        validateInput(input);
+        validateNumberInput(input);
 
         return getDigits(Integer.parseInt(input));
     }
 
-    public String getEndGameInput() {
+    private String getEndGameInput() {
         baseballView.displayMessage(MessageType.ASK_FOR_RESTART);
         String endInput = baseballView.readInput();
         validateEndInput(endInput);
