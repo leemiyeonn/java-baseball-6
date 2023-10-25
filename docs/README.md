@@ -1,6 +1,6 @@
 ### 🛠️ 구현할 기능 목록 🛠️
 
-#### 🖥️ 게임 규칙:
+#### 🖥️ 게임 규칙
 
 1. 게임 시작
     1. 컴퓨터는 1부터 9까지 서로 다른 임의의 수(1 ~ 9 사이의 정수) 3개를 선택한다.
@@ -53,7 +53,7 @@
 - 메서드:
     - generateRandomUniqueNumbers(): 중복되지 않는 랜덤 숫자를 생성합니다.
     - calculateGameResult(): 사용자의 입력과 컴퓨터의 숫자를 비교하여 결과를 계산합니다.
-    - checkGameEnded(): 게임이 종료되었는지 검증하고, 게임 결과의 게임 상태를 변경합니다.
+    - checkGameEnded(): 게임이 종료되었는지 검증합니다.
 
 ##### 4. BaseballView
 
@@ -88,7 +88,7 @@
 
 - 입력값의 유효성을 검사합니다.
 - 메서드:
-    - validateInput(): 입력 숫자의 유효성을 검사합니다.
+    - validateNumberInput(): 입력 숫자의 유효성을 검사합니다.
     - validateEndInput(): 게임 종료 입력의 유효성을 검사합니다.
 
 ##### 9. MessageType
@@ -97,13 +97,13 @@
 
 #### 🖥️ 예외 처리
 
-##### 1. 사용자 입력 검증:
+##### 1. 사용자 입력 검증
 
 - 숫자가 아닌 값이 입력될 경우 (IllegalArgumentException)
 - 3자리가 아닌 숫자가 입력될 경우 (IllegalArgumentException)
 - 0을 포함한 숫자가 입력될 경우 (IllegalArgumentException)
 - 중복된 숫자가 입력될 경우 (IllegalArgumentException)
 
-##### 2. 사용자 게임 종료/재시작 선택 입력 검증
+##### 2. 게임 종료/재시작 선택 입력 검증
 
 - 1 또는 2가 아닌 다른 값이 입력될 경우 (IllegalArgumentException)
