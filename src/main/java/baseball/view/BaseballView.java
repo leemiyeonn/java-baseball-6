@@ -16,6 +16,11 @@ public class BaseballView {
         Strike strike = result.getStrike();
         Ball ball = result.getBall();
 
+        if (isNoScore(ball, strike)) {
+            displayResult(ResultType.NOTHING);
+            return;
+        }
+
         if (isMaxStrike(strike)) {
             displayStrike(strike);
             return;
@@ -26,11 +31,16 @@ public class BaseballView {
             return;
         }
 
-        if (isNoScore(ball, strike)) {
-            displayResult(ResultType.NOTHING);
+        if (isNoStrike(strike)) {
+            displayBall(ball);
             return;
         }
 
+        if (isNoBall(ball)) {
+            displayStrike(strike);
+            return;
+        }
+        
         displayBallAndStrike(ball, strike);
     }
 
@@ -43,12 +53,16 @@ public class BaseballView {
         return ball.getCount() == MAX_SCORE;
     }
 
+    private boolean isNoStrike(Strike strike) {
+        return strike.getCount() == 0;
+    }
+
     private boolean isNoScore(Ball ball, Strike strike) {
         return ball.getCount() == NO_SCORE && strike.getCount() == NO_SCORE;
     }
 
-    private void displayBallAndStrike(Ball ball, Strike strike) {
-        System.out.println(String.format(ResultType.BALL_AND_STRIKE.getValue(), ball.getCount(), strike.getCount()));
+    private boolean isNoBall(Ball ball) {
+        return ball.getCount() == 0;
     }
 
     private void displayBall(Ball ball) {
@@ -57,6 +71,13 @@ public class BaseballView {
 
     private void displayStrike(Strike strike) {
         System.out.println(String.format(ResultType.STRIKE.getValue(), strike.getCount()));
+    }
+
+    private void displayBallAndStrike(Ball ball, Strike strike) {
+        System.out.print(String.format(ResultType.BALL.getValue(), ball.getCount()));
+        System.out.print(" ");
+        System.out.print(String.format(ResultType.STRIKE.getValue(), strike.getCount()));
+        System.out.println();
     }
 
     public void displayMessage(MessageType messageType) {
