@@ -4,8 +4,10 @@ import static baseball.utils.NumberUtils.getDigits;
 import static baseball.utils.Validator.validateEndInput;
 import static baseball.utils.Validator.validateNumberInput;
 
+import baseball.domain.GameConfig;
 import baseball.domain.GameResult;
 import baseball.enums.MessageType;
+import baseball.enums.ResultType;
 import baseball.model.BaseballModel;
 import baseball.view.BaseballView;
 import java.util.List;
@@ -48,11 +50,11 @@ public class BaseballController {
     private boolean askForRestart(GameResult gameResult) {
         String endInput = getEndGameInput();
 
-        if (endInput.equals(MessageType.RESTART.getMessage())) {
+        if (endInput.equals(GameConfig.RESTART_NUMBER)) {
             gameResult.restartGame();
             return true;
-        } else if (endInput.equals(MessageType.FINISH.getMessage())) {
-            baseballView.displayMessage(MessageType.GAME_ENDED);
+        } else if (endInput.equals(GameConfig.FINISH_NUMBER)) {
+            baseballView.displayMessage(MessageType.END);
             return false;
         }
         return false;

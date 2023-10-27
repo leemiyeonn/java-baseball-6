@@ -1,6 +1,7 @@
 package baseball.model;
 
-import static baseball.utils.Validator.NUMBER_LENGTH;
+import static baseball.domain.GameConfig.MAX_SCORE;
+import static baseball.domain.GameConfig.NUMBER_LENGTH;
 
 import baseball.domain.GameResult;
 import camp.nextstep.edu.missionutils.Randoms;
@@ -9,7 +10,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class BaseballModel {
-    public static final int MAX_SCORE = 3;
     public final GameResult gameResult;
 
     public BaseballModel(GameResult gameResult) {
