@@ -2,7 +2,7 @@ package baseball.model;
 
 import static baseball.utils.Validator.NUMBER_LENGTH;
 
-import baseball.entity.GameResult;
+import baseball.domain.GameResult;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;

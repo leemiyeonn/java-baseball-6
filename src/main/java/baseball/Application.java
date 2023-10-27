@@ -1,9 +1,9 @@
 package baseball;
 
 import baseball.controller.BaseballController;
-import baseball.entity.Ball;
-import baseball.entity.GameResult;
-import baseball.entity.Strike;
+import baseball.domain.Ball;
+import baseball.domain.GameResult;
+import baseball.domain.Strike;
 import baseball.model.BaseballModel;
 import baseball.view.BaseballView;
 

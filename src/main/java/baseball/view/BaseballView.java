@@ -2,9 +2,9 @@ package baseball.view;
 
 import static baseball.model.BaseballModel.MAX_SCORE;
 
-import baseball.entity.Ball;
-import baseball.entity.GameResult;
-import baseball.entity.Strike;
+import baseball.domain.Ball;
+import baseball.domain.GameResult;
+import baseball.domain.Strike;
 import baseball.enums.MessageType;
 import camp.nextstep.edu.missionutils.Console;
 

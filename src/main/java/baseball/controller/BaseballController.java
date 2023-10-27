@@ -4,7 +4,7 @@ import static baseball.utils.NumberUtils.getDigits;
 import static baseball.utils.Validator.validateEndInput;
 import static baseball.utils.Validator.validateNumberInput;
 
-import baseball.entity.GameResult;
+import baseball.domain.GameResult;
 import baseball.enums.MessageType;
 import baseball.model.BaseballModel;
 import baseball.view.BaseballView;
