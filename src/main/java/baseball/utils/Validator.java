@@ -1,12 +1,11 @@
 package baseball.utils;
 
+import static baseball.domain.GameConfig.INVALID_NUMBER_ZERO;
+import static baseball.domain.GameConfig.NUMBER_LENGTH;
+
 import baseball.domain.GameConfig;
-import baseball.enums.MessageType;
 import java.util.HashSet;
 import java.util.Set;
-
-import static baseball.domain.GameConfig.INVALID_NUMBER;
-import static baseball.domain.GameConfig.NUMBER_LENGTH;
 
 public class Validator {
 
@@ -19,7 +18,9 @@ public class Validator {
 
     public static void validateEndInput(String input) {
         validateIsNumber(input);
-        if (!(input.equals(GameConfig.RESTART_NUMBER) || input.equals(GameConfig.FINISH_NUMBER))) {
+        int inputNumber = Integer.parseInt(input);
+
+        if (!(inputNumber == GameConfig.RESTART_NUMBER || inputNumber == GameConfig.FINISH_NUMBER)) {
             throw new IllegalArgumentException("잘못된 값을 입력했습니다. 게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         }
     }
@@ -39,7 +40,8 @@ public class Validator {
     }
 
     private static void validateRange(String input) {
-        if (input.contains(INVALID_NUMBER)) {
+        String invalidNumber = Integer.toString(INVALID_NUMBER_ZERO);
+        if (input.contains(invalidNumber)) {
             throw new IllegalArgumentException("잘못된 값을 입력했습니다. 0을 포함하지 않는 3자리 정수를 입력해주세요.");
         }
     }
