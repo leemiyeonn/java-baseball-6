@@ -1,4 +1,4 @@
-## https://github.com/woowacourse-precourse/java-baseball-6/pull/1941
+## 🖥️ https://github.com/woowacourse-precourse/java-baseball-6/pull/1941
 
 ## 🛠️ 구현할 기능 목록 🛠️
 
